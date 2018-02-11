@@ -1,0 +1,5 @@
+#! /bin/bash
+echo "##############################################################" | ./nc ${NCHOST} ${NCPORT} -w 1
+echo "$(./date) - '$@' " | ./nc ${NCHOST} ${NCPORT} -w 1
+"$@" | ./nc ${NCHOST} ${NCPORT} -w 1
+
