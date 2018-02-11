@@ -1,16 +1,16 @@
-##Windows Forensic Best Practices
+## Windows Forensic Best Practices
 
-####Tools:
+#### Tools:
 * Sysinternals Suite 
 	* XP - https://web.archive.org/web/20140625160755if_/http://download.sysinternals.com/files/SysinternalsSuite.zip
 	* Vista and later - https://download.sysinternals.com/files/SysinternalsSuite.zip
 * Netcat - https://eternallybored.org/misc/netcat/netcat-win32-1.12.zip
 
 
-####Handy scripts:
+#### Handy scripts:
 **Best to have these baked on a CD**
 
-###`startup.cmd`
+### `startup.cmd`
 
 ```batch
 @echo off
@@ -22,7 +22,7 @@ echo.
 ```
 Run this from a command prompt to setup your environment
 
-###`ncrun.cmd`
+### `ncrun.cmd`
 
 ```batch
 @echo off
@@ -33,7 +33,7 @@ echo %DATE% %TIME% - %* | %~dp0\nc.exe %NCHOST% %NCPORT% -w 1
 After running `startup.cmd` and setting the environment variables `NCHOST` and `NCPORT`, you can run any command with `ncrun` in front of it, and the timestamp, command and all output will be sent over the netcat tunnel. Ex: `ncrun ipconfig /all`
 
 
-####Forensic commands (in order to run)
+#### Forensic commands (in order to run)
 1. `date /t` - Get current date
 2. `time /t` - Get current time
 3. `at` - Get scheduled tasks
